@@ -1,0 +1,16 @@
+mat-form-field {
+    width: 100%;
+  }
+  
+mat-spinner {
+  margin: auto;
+}
+
+.innerSpan {
+  float: right;
+  margin-right: 6px;
+  margin-top: -20px;
+  position: relative;
+  z-index: 2;
+  /* color: black; */
+}

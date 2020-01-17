@@ -1,0 +1,24 @@
+<mat-spinner color="accent" *ngIf="isLoading"></mat-spinner>
+<mat-card [ngStyle]="{'background-color':'gray'}" *ngIf="!isLoading">
+  <form (submit)="onLogin(loginForm)" #loginForm="ngForm">
+    <mat-form-field [color]="'accent'">
+      <input matInput type="email" name="email" ngModel required email
+        #emailInput="ngModel" placeholder="E-mail">
+      <mat-error *ngIf="emailInput.invalid">Please enter a valid email.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field color="accent">
+      <input matInput type="{{showPass ? 'text' : 'password'}}" name="password" ngModel #passwordInput="ngModel"
+        placeholder="Password" required appPasswordstrength>
+
+      <mat-icon class="innerSpan" color="accent" aria-hidden="false" aria-label="Example" 
+      (click)="showPass=!showPass" style="cursor: pointer;">{{showPass ? 'visibility' : 'visibility_off'}}</mat-icon>
+
+      <small class="form-text text-muted" *ngIf="passwordInput.invalid">
+          Password should contain lower & upper cases, digits and special chars & total length of at least 8 chars</small>
+      <mat-error *ngIf="passwordInput.invalid">Please enter a password.</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="accent"
+      type="submit" [disabled]="loginForm.invalid">Login</button>
+  </form>
+</mat-card>

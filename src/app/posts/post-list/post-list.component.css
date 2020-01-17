@@ -1,0 +1,29 @@
+:host{
+  display: block;
+  margin-top: 1rem;
+}
+
+.info-text{
+  text-align: center;
+}
+
+.custom-card {
+  background-color: gray;
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+.post-image {
+  width: 100%;
+}
+
+.post-image img {
+  width: 100%;
+  box-shadow: 2px 2px 5px;
+}
+
+mat-paginator {
+  margin-top: 1rem;
+}
